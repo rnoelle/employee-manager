@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
-class EmployeeEditor extends Component {
+export default class EmployeeEditor extends Component {
   constructor() {
     super()
+
     this.state = {
-      employee: null,
       originalEmployee: null,
+      employee: null,
       notModified: true
     }
 
@@ -33,15 +34,15 @@ class EmployeeEditor extends Component {
     this.state.originalEmployee.updatePhone(this.state.employee.phone);
     this.state.originalEmployee.updateTitle(this.state.employee.title);
     this.setState({
-      notModified:true
-    });
+      notModified: true
+    })
     this.props.refreshList();
   }
 
   cancel() {
     this.setState({
       employee: Object.assign({}, this.state.originalEmployee),
-      notModified: false
+      notModified: true
     })
   }
 
@@ -71,7 +72,6 @@ class EmployeeEditor extends Component {
 
       </div>
     )
+
   }
 }
-
-export default EmployeeEditor;

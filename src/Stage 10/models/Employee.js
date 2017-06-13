@@ -14,7 +14,7 @@ export default class Employee {
     this.phone = phone;
   }
 
-   updateTitle(title) {
-     this.title = title;
-   }
+  updateTitle(title) {
+    this.title = title;
+  }
 }
